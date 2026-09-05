@@ -1,28 +1,18 @@
+import LegalPage from "@/components/LegalPage";
+
 export const metadata = {
-  title: "Terms",
-  description: "Consultation terms template for Auric Saga services."
+  title: "Consultation Terms",
+  description: "Terms covering Auric Saga consultation scope, client responsibility, bookings, payments, rescheduling, and confidentiality."
 };
 
+const sections = [
+  { title: "Consultation Scope", paragraphs: ["Auric Saga provides Vastu, Numerology, Vedic Astrology, Tarot Reading, Energy Healing, and combined holistic consultations. The agreed service, format, preparation, deliverables, timing, and fee are confirmed before booking.", "Readings and recommendations are interpretive and reflective. Outcomes depend on many personal and external factors, and no specific financial, relationship, health, business, or life result is guaranteed."] },
+  { title: "Professional-Care Boundary", paragraphs: ["Consultations are not a substitute for licensed medical, mental-health, legal, financial, architectural, engineering, or emergency advice. Energy work does not diagnose, treat, or cure medical conditions.", "When a concern falls within a regulated professional field, clients should consult a suitably qualified professional before acting on any spiritual or holistic guidance."] },
+  { title: "Client Responsibility", paragraphs: ["Clients are responsible for providing accurate information, reviewing recommendations carefully, and deciding what actions are appropriate for their circumstances.", "For Vastu work, structural, electrical, plumbing, safety, or construction changes must be reviewed by qualified professionals. For major financial, legal, or health decisions, obtain appropriate licensed advice."] },
+  { title: "Booking, Payment and Rescheduling", paragraphs: ["A booking is confirmed only after the care desk accepts the scope and communicates the fee, payment instructions, preparation requirements, and appointment time.", "Rescheduling, cancellation, late-arrival, travel, and refund conditions are shared before payment and may vary by service because practitioner preparation can begin before the live session."] },
+  { title: "Respect, Confidentiality and Use", paragraphs: ["Auric Saga will handle client context with discretion. Clients are expected to communicate respectfully and must not use consultations to harass, surveil, manipulate, or make harmful claims about another person.", "Written summaries and consultation materials are intended for the booked client. They may not be resold, republished, or presented as professional certification without written permission."] }
+];
+
 export default function TermsPage() {
-  return (
-    <section className="section">
-      <div className="narrow stack-lg reveal">
-        <span className="eyebrow">Legal</span>
-        <h1>Consultation Terms</h1>
-        <p>
-          Auric Saga consultations provide spiritual, energetic, and reflective guidance. They are not a substitute for licensed medical, legal, financial, or psychological advice.
-        </p>
-        <div className="stack">
-          <h2>Consultation Scope</h2>
-          <p>Sessions may include Vastu, Numerology, Astrology, Tarot Reading, Energy Healing, or combined holistic guidance based on the selected service.</p>
-          <h2>Client Responsibility</h2>
-          <p>Clients remain responsible for decisions made after a consultation and should seek qualified professional advice where needed.</p>
-          <h2>Booking and Availability</h2>
-          <p>Session timing, format, preparation requirements, and pricing are confirmed by the care desk before final booking.</p>
-          <h2>Contact</h2>
-          <p>For terms or booking questions, email care@auricsaga.com.</p>
-        </div>
-      </div>
-    </section>
-  );
+  return <LegalPage title="Consultation Terms" intro="These terms set clear expectations for the scope, responsibilities, preparation, and use of Auric Saga consultations." updated="5 September 2026" sections={sections} />;
 }

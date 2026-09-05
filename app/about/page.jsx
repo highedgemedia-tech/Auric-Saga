@@ -56,6 +56,13 @@ const testimonials = [
   }
 ];
 
+const practiceStats = [
+  { value: "2,800+", label: "Lives guided" },
+  { value: "22+", label: "Countries reached" },
+  { value: "4.96 / 5", label: "Client rating" },
+  { value: "100%", label: "Private and tailored" }
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -134,9 +141,9 @@ export default function AboutPage() {
       <section className="section section-soft">
         <div className="container stack-lg">
           <div className="narrow stack reveal">
-            <span className="eyebrow">Auric Core Team</span>
-            <h2>Prepared by a dedicated practitioner team.</h2>
-            <p>Each consultation is supported by people who value discretion, clarity, and careful preparation.</p>
+            <span className="eyebrow">Credentials, Team and Recognition</span>
+            <h2>Prepared by a dedicated multi-disciplinary team.</h2>
+            <p>Each consultation is matched to relevant practice experience. Modality-specific background and preparation requirements are confirmed by the care desk before booking.</p>
           </div>
           <div className="team-grid">
             {team.map((member) => (
@@ -148,6 +155,33 @@ export default function AboutPage() {
                 </div>
               </article>
             ))}
+          </div>
+          <div className="service-grid compact-grid">
+            <article className="card card-pad stack scroll-reveal">
+              <span className="eyebrow">Credential Verification</span>
+              <h3>Practitioner background on request</h3>
+              <p>The care desk can share practitioner-specific modality background relevant to your proposed consultation before booking.</p>
+            </article>
+            <article className="card card-pad stack scroll-reveal">
+              <span className="eyebrow">Auric Articles</span>
+              <h3>Public research and essays</h3>
+              <p>The Auric publication platform extends consultation themes through deeper esoteric research and practical writing.</p>
+            </article>
+            <article className="card card-pad stack scroll-reveal">
+              <span className="eyebrow">Auric Gurukul</span>
+              <h3>Sacred-sciences learning</h3>
+              <p>The wider Auric ecosystem includes structured learning and masterclasses for serious students of sacred sciences.</p>
+            </article>
+          </div>
+          <div className="card card-pad two-col scroll-reveal">
+            <div className="stack">
+              <span className="eyebrow">Practice at a Glance</span>
+              <h3>Recognized through client trust and global reach.</h3>
+              <p>Auric Saga&apos;s public proof is grounded in consultation experience, client feedback, and the breadth of its five connected disciplines.</p>
+            </div>
+            <div className="stat-grid">
+              {practiceStats.map((stat) => <div className="stat-item" key={stat.label}><strong>{stat.value}</strong><span>{stat.label}</span></div>)}
+            </div>
           </div>
         </div>
       </section>
