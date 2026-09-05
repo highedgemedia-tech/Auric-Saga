@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import AuricHeroArt from "@/components/AuricHeroArt";
+import PageEditorialImage from "@/components/PageEditorialImage";
 import {
   breadcrumbJsonLd,
   getAllSubpages,
@@ -37,6 +39,15 @@ export default function ServiceSubpage({ params }) {
   const category = getCategory(params.category);
   const page = getSubpage(params.category, params.slug);
   if (!category || !page) notFound();
+
+  const editorialDetails = page.benefits.slice(0, 3).map((benefit, index) => ({
+    title: benefit,
+    copy: [
+      `${page.title} is prepared around the exact context and priorities you share.`,
+      `The central ${category.label} pattern is separated from secondary concerns and noise.`,
+      "Recommendations are organized into realistic actions you can follow after the session."
+    ][index]
+  }));
 
   const breadcrumb = breadcrumbJsonLd([
     { name: "Home", href: "/" },
@@ -89,7 +100,8 @@ export default function ServiceSubpage({ params }) {
               <Link className="btn btn-secondary btn-lg" href={`/${category.slug}`}>Explore {category.label}</Link>
             </div>
           </div>
-          <aside className="card card-pad stack scroll-reveal">
+          <aside className="card card-pad stack scroll-reveal artwork-aside">
+            <AuricHeroArt variant={category.slug} seed={page.slug} title={page.title} />
             <span className="eyebrow">Best Suited For</span>
             <div className="check-list">
               {page.suitableFor.map((item) => <p key={item}>{item}</p>)}
@@ -126,7 +138,11 @@ export default function ServiceSubpage({ params }) {
             <span className="eyebrow">Detailed Approach</span>
             <h2>Traditional insight, interpreted with practical context.</h2>
             <p className="lead">The method respects the spiritual framework of {category.label} while keeping every recommendation understandable and usable.</p>
-            <Link className="text-link" href="/contact">Ask a question before booking</Link>
+            <div className="method-summary">
+              {page.features.slice(0, 3).map((feature) => (
+                <div key={feature.title}><strong>{feature.title}</strong><span>{feature.copy}</span></div>
+              ))}
+            </div>
           </div>
           <div className="card card-pad stack scroll-reveal content-prose">
             {page.approach.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
@@ -135,6 +151,14 @@ export default function ServiceSubpage({ params }) {
               <span>{page.preparation}</span>
             </div>
           </div>
+          <PageEditorialImage
+            src={`/art-${category.slug}-${page.slug}.jpg`}
+            alt={`${page.title} consultation setting and symbolic materials`}
+            eyebrow="Visual Focus"
+            title={`The central focus of ${page.title}.`}
+            copy={page.description}
+            details={editorialDetails}
+          />
         </div>
       </section>
 

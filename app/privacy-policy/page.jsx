@@ -14,5 +14,5 @@ const sections = [
 ];
 
 export default function PrivacyPolicyPage() {
-  return <LegalPage title="Privacy Policy" intro="Auric Saga respects the private nature of spiritual consultation and explains here how inquiry and client information is handled." updated="5 September 2026" sections={sections} />;
+  return <LegalPage title="Privacy Policy" intro="Auric Saga respects the private nature of spiritual consultation and explains here how inquiry and client information is handled." updated="5 September 2026" sections={sections} artwork={{ src: "/art-page-privacy-policy.jpg", detail: "Confidential records and secure client communication", alt: "Confidential consultation folder protected by a lock and sealed envelope", bodySrc: "/image-page-privacy-policy.jpg", bodyAlt: "A sealed consultation envelope being placed in a secure archive" }} />;
 }

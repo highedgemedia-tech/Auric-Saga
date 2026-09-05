@@ -114,5 +114,5 @@ export default function HomePageClient({ html }) {
     };
   }, []);
 
-  return <div className="home-page antialiased text-ink-800" dangerouslySetInnerHTML={{ __html: html }} />;
+  return <div className="home-page page-transition antialiased text-ink-800" dangerouslySetInnerHTML={{ __html: html }} />;
 }

@@ -14,5 +14,5 @@ const sections = [
 ];
 
 export default function TermsPage() {
-  return <LegalPage title="Consultation Terms" intro="These terms set clear expectations for the scope, responsibilities, preparation, and use of Auric Saga consultations." updated="5 September 2026" sections={sections} />;
+  return <LegalPage title="Consultation Terms" intro="These terms set clear expectations for the scope, responsibilities, preparation, and use of Auric Saga consultations." updated="5 September 2026" sections={sections} artwork={{ src: "/art-page-consultation-terms.jpg", detail: "Clear scope, fair responsibility, and considered guidance", alt: "Consultation agreement with balanced brass scales and fountain pen", bodySrc: "/image-page-consultation-terms.jpg", bodyAlt: "Client and consultant reviewing clear consultation terms together" }} />;
 }

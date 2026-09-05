@@ -1,5 +1,7 @@
 import Link from "next/link";
+import AuricHeroArt from "@/components/AuricHeroArt";
 import ContactForm from "@/components/ContactForm";
+import ServiceArtwork, { artworkCategories } from "@/components/ServiceArtwork";
 
 export const metadata = {
   title: "Book Consultation",
@@ -48,12 +50,12 @@ export default function BookConsultationPage() {
       <section className="page-hero" id="instant-booking">
         <div className="container hero-grid">
           <div className="stack-lg reveal"><span className="eyebrow">Private Reservation</span><h1>Book a consultation prepared around your exact concern.</h1><p className="lead">Choose online or in-person guidance for Vastu, Numerology, Astrology, Tarot Reading, Energy Healing, or a combined Master Auric Audit.</p><div className="pill-list"><span className="pill">Online Sessions</span><span className="pill">In-Person by Availability</span><span className="pill">Confidential Preparation</span></div></div>
-          <aside className="card card-pad scroll-reveal"><ContactForm compact /></aside>
+          <aside className="card card-pad stack scroll-reveal artwork-aside"><AuricHeroArt variant="booking" seed="private-consultation-reservation" title="Consultation Journey" /><ContactForm compact /></aside>
         </div>
       </section>
 
       <section className="section">
-        <div className="container stack-lg"><div className="narrow stack reveal section-heading"><span className="eyebrow">Choose Your Format</span><h2>Online and in-person consultation options.</h2><p>The modality and the information available determine which format gives the clearest review.</p></div><div className="comparison-grid"><article className="card card-pad stack scroll-reveal"><span className="pill">Worldwide</span><h3>Online Consultation</h3><p>Best for Astrology, Numerology, Tarot, Energy Healing, and Vastu reviews supported by clear plans and photos.</p><div className="check-list"><p>Private video or voice session</p><p>Simple document sharing before the call</p><p>Flexible international scheduling</p><p>No travel required</p></div><a className="btn btn-primary btn-md" href="#instant-booking">Choose Online</a></article><article className="card card-pad stack scroll-reveal"><span className="pill">By Availability</span><h3>In-Person Consultation</h3><p>Considered for select Vastu audits and consultation requirements where physical observation materially improves the review.</p><div className="check-list"><p>Location and scope reviewed first</p><p>Travel requirements confirmed separately</p><p>On-site observation where appropriate</p><p>Written priorities after the visit</p></div><a className="btn btn-secondary btn-md" href="#instant-booking">Ask Availability</a></article></div></div>
+        <div className="container stack-lg"><div className="narrow stack reveal section-heading"><span className="eyebrow">Choose Your Format</span><h2>Online and in-person consultation options.</h2><p>The modality and the information available determine which format gives the clearest review.</p></div><div className="elemental-gallery scroll-reveal" aria-label="Auric Saga consultation disciplines">{artworkCategories.map((category) => <ServiceArtwork category={category} compact key={category} />)}</div><div className="comparison-grid"><article className="card card-pad stack scroll-reveal"><span className="pill">Worldwide</span><h3>Online Consultation</h3><p>Best for Astrology, Numerology, Tarot, Energy Healing, and Vastu reviews supported by clear plans and photos.</p><div className="check-list"><p>Private video or voice session</p><p>Simple document sharing before the call</p><p>Flexible international scheduling</p><p>No travel required</p></div><a className="btn btn-primary btn-md" href="#instant-booking">Choose Online</a></article><article className="card card-pad stack scroll-reveal"><span className="pill">By Availability</span><h3>In-Person Consultation</h3><p>Considered for select Vastu audits and consultation requirements where physical observation materially improves the review.</p><div className="check-list"><p>Location and scope reviewed first</p><p>Travel requirements confirmed separately</p><p>On-site observation where appropriate</p><p>Written priorities after the visit</p></div><a className="btn btn-secondary btn-md" href="#instant-booking">Ask Availability</a></article></div></div>
       </section>
 
       <section className="section section-soft">

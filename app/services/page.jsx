@@ -1,4 +1,6 @@
 import Link from "next/link";
+import AuricHeroArt from "@/components/AuricHeroArt";
+import ServiceArtwork from "@/components/ServiceArtwork";
 import { clientReviews, getAllCategories } from "@/lib/servicesData";
 
 export const metadata = {
@@ -30,7 +32,7 @@ export default function ServicesPage() {
             <p className="lead">Focused guidance for space alignment, planetary timing, name frequency, intuitive decisions, and energetic balance.</p>
             <div className="button-row"><Link className="btn btn-primary btn-lg" href="/book-consultation">Book Consultation</Link><Link className="btn btn-secondary btn-lg" href="/contact">Help Me Choose</Link></div>
           </div>
-          <aside className="card card-pad stack scroll-reveal"><span className="eyebrow">Private Guidance</span><div className="check-list"><p>Preparation before the session</p><p>Worldwide video or voice consultation</p><p>Clear remedies and next steps</p><p>Confidential client handling</p></div></aside>
+          <aside className="card card-pad stack scroll-reveal artwork-aside"><AuricHeroArt variant="services" seed="all-consultation-paths" title="Five Sacred Modalities" /><span className="eyebrow">Private Guidance</span><div className="check-list"><p>Preparation before the session</p><p>Worldwide video or voice consultation</p><p>Clear remedies and next steps</p><p>Confidential client handling</p></div></aside>
         </div>
       </section>
 
@@ -39,7 +41,7 @@ export default function ServicesPage() {
           <div className="narrow stack reveal section-heading"><span className="eyebrow">Five Core Disciplines</span><h2>Explore every Auric Saga consultation category.</h2></div>
           <div className="service-grid">
             {categories.map((category) => (
-              <Link className="card card-pad stack scroll-reveal" href={`/${category.slug}`} key={category.slug}><span className="eyebrow">{category.eyebrow}</span><h2>{category.label}</h2><p>{category.description}</p><span className="pill">{category.subpages.length} focused services</span><span className="text-link">View all options</span></Link>
+              <Link className="card card-pad stack scroll-reveal service-visual-card" href={`/${category.slug}`} key={category.slug}><ServiceArtwork category={category.slug} compact showCaption={false} /><span className="eyebrow">{category.eyebrow}</span><h2>{category.label}</h2><p>{category.description}</p><span className="pill">{category.subpages.length} focused services</span><span className="text-link">View all options</span></Link>
             ))}
           </div>
         </div>

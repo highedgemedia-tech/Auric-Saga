@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import AuricHeroArt from "@/components/AuricHeroArt";
+import PageEditorialImage from "@/components/PageEditorialImage";
+import { getCategoryArtworkSrc } from "@/components/ServiceArtwork";
 import {
   breadcrumbJsonLd,
   clientReviews,
@@ -34,6 +37,15 @@ export default function CategoryPage({ params }) {
   const details = getCategoryDetails(params.category);
   if (!category || !details) notFound();
 
+  const editorialDetails = category.process.slice(0, 3).map((step, index) => ({
+    title: step,
+    copy: [
+      `The care desk confirms the information needed for your ${category.label} review.`,
+      "The practitioner studies the supplied context before the private session begins.",
+      "Findings are explained clearly, with time for focused questions and priorities."
+    ][index]
+  }));
+
   const breadcrumb = breadcrumbJsonLd([
     { name: "Home", href: "/" },
     { name: category.label, href: `/${category.slug}` }
@@ -65,7 +77,8 @@ export default function CategoryPage({ params }) {
               <Link className="btn btn-secondary btn-lg" href="/contact">Ask the Care Desk</Link>
             </div>
           </div>
-          <aside className="card card-pad stack scroll-reveal">
+          <aside className="card card-pad stack scroll-reveal artwork-aside">
+            <AuricHeroArt variant={category.slug} seed={`${category.slug}-hub`} title={category.title} />
             <span className="eyebrow">What You Receive</span>
             <div className="check-list">{category.benefits.map((benefit) => <p key={benefit}>{benefit}</p>)}</div>
           </aside>
@@ -111,11 +124,24 @@ export default function CategoryPage({ params }) {
             <span className="eyebrow">Our Method</span>
             <h2>Prepared privately and explained without fear-based language.</h2>
             <p className="lead">The consultation connects traditional principles with the actual context of your home, timeline, name, choice, or energetic concern.</p>
+            <div className="method-summary">
+              {details.features.slice(0, 3).map((feature) => (
+                <div key={feature.title}><strong>{feature.title}</strong><span>{feature.copy}</span></div>
+              ))}
+            </div>
           </div>
           <div className="card card-pad stack scroll-reveal content-prose">
             {details.approach.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             <div className="preparation-note"><strong>Before your session</strong><span>{details.preparation}</span></div>
           </div>
+          <PageEditorialImage
+            src={getCategoryArtworkSrc(category.slug)}
+            alt={`${category.label} consultation materials in a natural setting`}
+            eyebrow="Inside the Practice"
+            title={`${category.label}, seen through its natural elements.`}
+            copy="A visual study of the materials, symbols, and elemental relationships considered during this consultation path."
+            details={editorialDetails}
+          />
         </div>
       </section>
 

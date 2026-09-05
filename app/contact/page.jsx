@@ -1,4 +1,6 @@
 import Link from "next/link";
+import AuricHeroArt from "@/components/AuricHeroArt";
+import PageEditorialImage from "@/components/PageEditorialImage";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
@@ -30,12 +32,12 @@ export default function ContactPage() {
       <section className="page-hero">
         <div className="container hero-grid">
           <div className="stack-lg reveal"><span className="eyebrow">Contact Auric Saga</span><h1>Share your concern with the care desk.</h1><p className="lead">Send your question, preferred consultation type, location or time zone, and suitable time. The team will respond with the right next step.</p><div className="button-row"><a className="btn btn-primary btn-lg" href="#contact-form">Send an Inquiry</a><a className="btn btn-secondary btn-lg" href="https://wa.me/?text=Hello%20Auric%20Saga%2C%20I%20would%20like%20to%20ask%20about%20a%20private%20consultation." target="_blank" rel="noopener noreferrer">Open WhatsApp</a></div></div>
-          <aside className="card card-pad stack scroll-reveal"><span className="eyebrow">Quick Contact</span><div className="check-list"><p>Worldwide video and voice sessions</p><p>Monday-Saturday, 10:00 AM-7:00 PM IST</p><p>Private inquiry handling</p><p>Service matching available</p></div></aside>
+          <aside className="card card-pad stack scroll-reveal artwork-aside"><AuricHeroArt variant="contact" seed="care-desk-worldwide" title="Direct Connection" /><span className="eyebrow">Quick Contact</span><div className="check-list"><p>Worldwide video and voice sessions</p><p>Monday-Saturday, 10:00 AM-7:00 PM IST</p><p>Private inquiry handling</p><p>Service matching available</p></div></aside>
         </div>
       </section>
 
       <section className="section" id="contact-form">
-        <div className="container two-col"><div className="stack reveal"><span className="eyebrow">Booking and Query Form</span><h2>Tell us what you need clarity on.</h2><p className="lead">A concise, specific message helps the care desk identify the right practitioner, session depth, and preparation.</p><div className="card card-pad stack"><h3>Helpful details</h3><div className="check-list"><p>Your central question or desired outcome</p><p>The modality you are considering, if known</p><p>Your country, time zone, and preferred time</p><p>Whether you prefer video, voice, or in-person review</p></div></div></div><div className="card card-pad scroll-reveal"><ContactForm /></div></div>
+        <div className="container two-col"><div className="stack reveal"><span className="eyebrow">Booking and Query Form</span><h2>Tell us what you need clarity on.</h2><p className="lead">A concise, specific message helps the care desk identify the right practitioner, session depth, and preparation.</p><div className="card card-pad stack"><h3>Helpful details</h3><div className="check-list"><p>Your central question or desired outcome</p><p>The modality you are considering, if known</p><p>Your country, time zone, and preferred time</p><p>Whether you prefer video, voice, or in-person review</p></div></div></div><div className="card card-pad scroll-reveal"><ContactForm /></div><PageEditorialImage src="/image-page-contact.jpg" alt="Auric Saga consultation coordinator responding at the care desk" eyebrow="Worldwide Support" title="One care desk for every consultation path." copy="The team coordinates private inquiries, practitioner matching, preparation, and international appointment times." details={[{ title: "Service matching", copy: "Your concern is reviewed before a consultation path is recommended." }, { title: "Time-zone planning", copy: "Worldwide appointment times are coordinated from one care desk." }, { title: "Private handling", copy: "Preparation details and consultation context are handled discreetly." }]} /></div>
       </section>
 
       <section className="section section-soft">
