@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import AuricHeroArt from "@/components/AuricHeroArt";
 import PageEditorialImage from "@/components/PageEditorialImage";
+import PageHeroIllumination from "@/components/PageHeroIllumination";
 import { getCategoryArtworkSrc } from "@/components/ServiceArtwork";
 import {
   breadcrumbJsonLd,
@@ -63,7 +63,8 @@ export default function CategoryPage({ params }) {
 
   return (
     <>
-      <section className="page-hero">
+      <section className={`page-hero page-hero--${category.slug}`}>
+        <PageHeroIllumination variant={category.slug} scope={`${category.slug}-overview`} />
         <div className="container hero-grid">
           <div className="stack-lg reveal">
             <nav className="breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span>{category.label}</span></nav>
@@ -78,7 +79,6 @@ export default function CategoryPage({ params }) {
             </div>
           </div>
           <aside className="card card-pad stack scroll-reveal artwork-aside">
-            <AuricHeroArt variant={category.slug} seed={`${category.slug}-hub`} title={category.title} />
             <span className="eyebrow">What You Receive</span>
             <div className="check-list">{category.benefits.map((benefit) => <p key={benefit}>{benefit}</p>)}</div>
           </aside>
@@ -118,7 +118,7 @@ export default function CategoryPage({ params }) {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section method-section">
         <div className="container two-col">
           <div className="stack reveal">
             <span className="eyebrow">Our Method</span>
@@ -147,14 +147,11 @@ export default function CategoryPage({ params }) {
 
       <section className="section section-soft">
         <div className="container stack-lg">
-          <div className="narrow stack reveal section-heading"><span className="eyebrow">Process and Remedies</span><h2>A clear path from preparation to implementation.</h2></div>
+          <div className="narrow stack reveal section-heading"><span className="eyebrow">Consultation Process</span><h2>A clear path from preparation to implementation.</h2></div>
           <div className="process-grid">
             {category.process.map((step, index) => (
               <article className="process-step scroll-reveal" key={step}><span>{String(index + 1).padStart(2, "0")}</span><h3>{step}</h3><p>Each stage keeps the review focused, confidential, and connected to a practical next action.</p></article>
             ))}
-          </div>
-          <div className="service-grid compact-grid">
-            {details.features.slice(0, 3).map((feature) => <article className="card card-pad stack scroll-reveal" key={feature.title}><h3>{feature.title}</h3><p>{feature.copy}</p></article>)}
           </div>
         </div>
       </section>
@@ -176,7 +173,14 @@ export default function CategoryPage({ params }) {
           <div className="faq-list">
             {details.faqs.map((faq) => <details className="card card-pad scroll-reveal" key={faq.question}><summary><h3>{faq.question}</h3><span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}
           </div>
-          <div className="cta-banner scroll-reveal"><div className="stack"><span className="eyebrow">Private Consultation</span><h2>{category.cta.title}</h2><p>Share your main concern and the care desk will guide you toward the most suitable consultation path.</p></div><Link className="btn btn-gold btn-lg" href="/book-consultation">{category.cta.label}</Link></div>
+          <div className="cta-banner scroll-reveal">
+            <div className="stack">
+              <span className="eyebrow">Private Consultation</span>
+              <h2>{category.cta.title}</h2>
+              <p>Share your main concern and the care desk will guide you toward the most suitable consultation path.</p>
+            </div>
+            <Link className="btn btn-gold btn-lg" href="/book-consultation">{category.cta.label}</Link>
+          </div>
         </div>
       </section>
 

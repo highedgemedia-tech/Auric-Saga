@@ -1,5 +1,5 @@
 import Link from "next/link";
-import AuricHeroArt from "@/components/AuricHeroArt";
+import PageHeroIllumination from "@/components/PageHeroIllumination";
 import ServiceArtwork from "@/components/ServiceArtwork";
 import { clientReviews, getAllCategories } from "@/lib/servicesData";
 
@@ -19,12 +19,21 @@ const concernPaths = [
 
 const process = ["Share your concern", "Confirm the right modality", "Practitioner preparation", "Private consultation", "Receive action guidance"];
 
+const serviceActionLabels = {
+  vastu: "Explore Vastu Services",
+  numerology: "Explore Numerology Services",
+  astrology: "Explore Astrology Services",
+  "tarot-reading": "Explore Tarot Services",
+  "energy-healing": "Explore Energy Services"
+};
+
 export default function ServicesPage() {
   const categories = getAllCategories();
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero page-hero--services">
+        <PageHeroIllumination variant="services" scope="services-index" />
         <div className="container hero-grid">
           <div className="stack-lg reveal">
             <span className="eyebrow">Sacred Modalities</span>
@@ -32,16 +41,16 @@ export default function ServicesPage() {
             <p className="lead">Focused guidance for space alignment, planetary timing, name frequency, intuitive decisions, and energetic balance.</p>
             <div className="button-row"><Link className="btn btn-primary btn-lg" href="/book-consultation">Book Consultation</Link><Link className="btn btn-secondary btn-lg" href="/contact">Help Me Choose</Link></div>
           </div>
-          <aside className="card card-pad stack scroll-reveal artwork-aside"><AuricHeroArt variant="services" seed="all-consultation-paths" title="Five Sacred Modalities" /><span className="eyebrow">Private Guidance</span><div className="check-list"><p>Preparation before the session</p><p>Worldwide video or voice consultation</p><p>Clear remedies and next steps</p><p>Confidential client handling</p></div></aside>
+          <aside className="card card-pad stack scroll-reveal artwork-aside"><span className="eyebrow">Private Guidance</span><div className="check-list"><p>Preparation before the session</p><p>Worldwide video or voice consultation</p><p>Clear remedies and next steps</p><p>Confidential client handling</p></div></aside>
         </div>
       </section>
 
       <section className="section">
         <div className="container stack-lg">
           <div className="narrow stack reveal section-heading"><span className="eyebrow">Five Core Disciplines</span><h2>Explore every Auric Saga consultation category.</h2></div>
-          <div className="service-grid">
+          <div className="service-grid services-category-grid">
             {categories.map((category) => (
-              <Link className="card card-pad stack scroll-reveal service-visual-card" href={`/${category.slug}`} key={category.slug}><ServiceArtwork category={category.slug} compact showCaption={false} /><span className="eyebrow">{category.eyebrow}</span><h2>{category.label}</h2><p>{category.description}</p><span className="pill">{category.subpages.length} focused services</span><span className="text-link">View all options</span></Link>
+              <Link className="card card-pad stack scroll-reveal service-visual-card" href={`/${category.slug}`} key={category.slug}><ServiceArtwork category={category.slug} compact showCaption={false} /><span className="eyebrow">{category.eyebrow}</span><h2>{category.label}</h2><p>{category.description}</p><span className="text-link">{serviceActionLabels[category.slug]}</span></Link>
             ))}
           </div>
         </div>

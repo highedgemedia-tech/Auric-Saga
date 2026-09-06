@@ -114,29 +114,6 @@
     .pearl-panel-hover {
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .pearl-panel-hover:hover {
-      transform: translateY(-5px);
-      border-color: rgba(200, 158, 46, 0.5);
-      box-shadow: 0 20px 45px -10px rgba(98, 28, 160, 0.12), 0 0 25px rgba(223, 188, 85, 0.2);
-    }
-
-    .btn-gold {
-      background: linear-gradient(135deg, #dfbc55 0%, #c89e2e 50%, #a17a1c 100%);
-      color: #150324;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 18px rgba(200, 158, 46, 0.3);
-    }
-    .btn-gold:hover {
-      box-shadow: 0 6px 25px rgba(200, 158, 46, 0.45);
-      transform: translateY(-2px);
-      filter: brightness(1.05);
-    }
-
-    .btn-royal {
-      background: linear-gradient(135deg, #340d57 0%, #23073d 100%);
-      color: #ffffff;
       transition: all 0.3s ease;
       box-shadow: 0 4px 18px rgba(35, 7, 61, 0.25);
     }
@@ -194,7 +171,7 @@
       <div class="grid grid-cols-[1fr_auto] lg:grid-cols-[220px_minmax(0,1fr)_190px] items-center h-20 gap-4 lg:gap-6">
         
         <!-- Brand Logo -->
-        <a href="#" class="flex items-center shrink-0 group" aria-label="Auric Saga home">
+        <a href="/" class="flex items-center shrink-0 group" aria-label="Auric Saga home">
           <img src="auricsaga-final-logo.png" alt="Auric Saga" class="h-14 sm:h-16 w-auto max-w-[205px] object-contain" />
         </a>
 
@@ -333,7 +310,7 @@
 
       <!-- Call to Actions -->
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#book-consultation" class="btn-royal w-full sm:w-auto px-9 py-4 rounded-full text-sm font-bold uppercase tracking-widest flex items-center justify-center gap-3">
+        <a href="/book-consultation" class="btn-royal w-full sm:w-auto px-9 py-4 rounded-full text-sm font-bold uppercase tracking-widest flex items-center justify-center gap-3">
           <span>Schedule Private Session</span>
           <svg class="w-4 h-4 text-gold-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
@@ -363,7 +340,7 @@
           <p class="font-cormorant italic text-xl text-ink-700 mt-3">
             Guidance that respects ancient discipline while giving you clear next steps for modern life.
           </p>
-          <a href="#book-consultation" class="btn-gold inline-flex items-center justify-center gap-2 mt-8 px-7 py-3.5 rounded-full text-xs uppercase tracking-widest">
+          <a href="/book-consultation" class="btn-gold inline-flex items-center justify-center gap-2 mt-8 px-7 py-3.5 rounded-full text-xs uppercase tracking-widest">
             <span>Start With Clarity</span>
             <span>&rarr;</span>
           </a>
@@ -447,10 +424,10 @@
           </div>
           
           <div class="mt-8 pt-4">
-            <button onclick="prefillService('Vastu')" class="w-full py-3 rounded-xl bg-pearl-200 hover:bg-royal-900 hover:text-white font-semibold text-xs tracking-wider uppercase transition-all duration-300 border border-pearl-400 flex items-center justify-center gap-2 text-royal-950">
-              <span>Book Vastu Session</span>
+            <a href="/vastu" class="w-full py-3 rounded-xl bg-pearl-200 hover:bg-royal-900 hover:text-white font-semibold text-xs tracking-wider uppercase transition-all duration-300 border border-pearl-400 flex items-center justify-center gap-2 text-royal-950">
+              <span>Explore Vastu Services</span>
               <span>&rarr;</span>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -485,10 +462,10 @@
           </div>
           
           <div class="mt-8 pt-4">
-            <button onclick="prefillService('Numerology')" class="w-full py-3 rounded-xl bg-pearl-200 hover:bg-royal-900 hover:text-white font-semibold text-xs tracking-wider uppercase transition-all duration-300 border border-pearl-400 flex items-center justify-center gap-2 text-royal-950">
-              <span>Book Numerology Session</span>
+            <a href="/numerology" class="w-full py-3 rounded-xl bg-pearl-200 hover:bg-royal-900 hover:text-white font-semibold text-xs tracking-wider uppercase transition-all duration-300 border border-pearl-400 flex items-center justify-center gap-2 text-royal-950">
+              <span>Explore Numerology Services</span>
               <span>&rarr;</span>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -523,10 +500,10 @@
           </div>
           
           <div class="mt-8 pt-4">
-            <button onclick="prefillService('Astrology')" class="w-full py-3 rounded-xl bg-pearl-200 hover:bg-royal-900 hover:text-white font-semibold text-xs tracking-wider uppercase transition-all duration-300 border border-pearl-400 flex items-center justify-center gap-2 text-royal-950">
-              <span>Book Astrology Reading</span>
+            <a href="/astrology" class="w-full py-3 rounded-xl bg-pearl-200 hover:bg-royal-900 hover:text-white font-semibold text-xs tracking-wider uppercase transition-all duration-300 border border-pearl-400 flex items-center justify-center gap-2 text-royal-950">
+              <span>Explore Astrology Services</span>
               <span>&rarr;</span>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -561,10 +538,10 @@
           </div>
           
           <div class="mt-8 pt-4">
-            <button onclick="prefillService('Tarot Reading')" class="w-full py-3 rounded-xl bg-pearl-200 hover:bg-royal-900 hover:text-white font-semibold text-xs tracking-wider uppercase transition-all duration-300 border border-pearl-400 flex items-center justify-center gap-2 text-royal-950">
-              <span>Book Tarot Reading</span>
+            <a href="/tarot-reading" class="w-full py-3 rounded-xl bg-pearl-200 hover:bg-royal-900 hover:text-white font-semibold text-xs tracking-wider uppercase transition-all duration-300 border border-pearl-400 flex items-center justify-center gap-2 text-royal-950">
+              <span>Explore Tarot Services</span>
               <span>&rarr;</span>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -599,10 +576,10 @@
           </div>
           
           <div class="mt-8 pt-4">
-            <button onclick="prefillService('Energy Healing')" class="w-full py-3 rounded-xl bg-pearl-200 hover:bg-royal-900 hover:text-white font-semibold text-xs tracking-wider uppercase transition-all duration-300 border border-pearl-400 flex items-center justify-center gap-2 text-royal-950">
-              <span>Book Energy Session</span>
+            <a href="/energy-healing" class="w-full py-3 rounded-xl bg-pearl-200 hover:bg-royal-900 hover:text-white font-semibold text-xs tracking-wider uppercase transition-all duration-300 border border-pearl-400 flex items-center justify-center gap-2 text-royal-950">
+              <span>Explore Energy Services</span>
               <span>&rarr;</span>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -640,10 +617,10 @@
           </div>
           
           <div class="mt-8 pt-4">
-            <button onclick="prefillService('Help me choose')" class="btn-royal w-full py-3.5 rounded-xl font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2">
+            <a href="/book-consultation" class="btn-royal w-full py-3.5 rounded-xl font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2">
               <span>Request Master Audit</span>
               <span>&rarr;</span>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -696,7 +673,7 @@
             Each session is prepared by specialists who bring structure, intuition, and grounded discretion to your inquiry.
           </p>
         </div>
-        <a href="#book-consultation" class="btn-royal inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold">
+        <a href="/book-consultation" class="btn-royal inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold">
           <span>Meet Us In Session</span>
           <span class="text-gold-300">&rarr;</span>
         </a>
@@ -914,9 +891,9 @@
             <span>Email Care Desk</span>
             <span>&rarr;</span>
           </a>
-          <a href="#book-consultation" class="w-full px-8 py-4 rounded-full text-sm font-semibold tracking-wider text-white hover:text-gold-200 bg-white/10 hover:bg-white/15 transition border border-white/20 flex items-center justify-center gap-2">
-            <span>Use Booking Form</span>
-            <span>&darr;</span>
+          <a href="/book-consultation" class="w-full px-8 py-4 rounded-full text-sm font-semibold tracking-wider text-white hover:text-gold-200 bg-white/10 hover:bg-white/15 transition border border-white/20 flex items-center justify-center gap-2">
+            <span>Open Booking Form</span>
+            <span>&rarr;</span>
           </a>
         </div>
       </div>
@@ -1130,37 +1107,32 @@
         
         <!-- Brand Col -->
         <div class="lg:col-span-2 space-y-4">
-          <a href="#" class="inline-flex items-center rounded-2xl bg-white/95 p-3 shadow-lg border border-gold-400/20" aria-label="Auric Saga home">
-            <img src="auricsaga-final-logo.png" alt="Auric Saga" class="h-12 w-auto max-w-[220px] object-contain" />
+          <a href="/" class="inline-flex items-center rounded-xl bg-white px-4 py-2.5 shadow-sm border border-pearl-200/60 hover:border-gold-400/50 transition-all duration-300" aria-label="Auric Saga home">
+            <img src="/auricsaga-final-logo.png" alt="Auric Saga" class="h-10 w-auto max-w-[200px] object-contain" />
           </a>
-          <p class="text-xs text-pearl-400 max-w-sm leading-relaxed">
+          <p class="text-xs text-pearl-300/90 max-w-sm leading-relaxed">
             A sanctuary for sacred ancient wisdom. Empowering global individuals, entrepreneurs, and families with genuine Vastu, Vedic Astrology, and holistic healing.
           </p>
-          <div class="flex items-center gap-3 pt-1" aria-label="Auric Saga social links">
-            <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full border border-white/15 bg-white/5 hover:bg-gold-400 hover:text-royal-950 hover:border-gold-400 text-pearl-200 transition grid place-items-center">
-              <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                <circle cx="12" cy="12" r="4"></circle>
-                <circle cx="17.5" cy="6.5" r="1"></circle>
+          <div class="flex items-center gap-3 pt-2 text-pearl-300" aria-label="Auric Saga social links">
+            <a href="https://www.instagram.com/auricsaga/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-gold-400 hover:bg-gold-400/15 hover:text-gold-300 text-pearl-300 transition-all duration-300 flex items-center justify-center hover:-translate-y-0.5 shadow-sm">
+              <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
             </a>
-            <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full border border-white/15 bg-white/5 hover:bg-gold-400 hover:text-royal-950 hover:border-gold-400 text-pearl-200 transition grid place-items-center">
+            <a href="https://www.facebook.com/auricsaga/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-gold-400 hover:bg-gold-400/15 hover:text-gold-300 text-pearl-300 transition-all duration-300 flex items-center justify-center hover:-translate-y-0.5 shadow-sm">
               <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M14.2 8.2V6.7c0-.7.5-.9.9-.9h2.1V2.2L14.3 2c-3.2 0-4.8 1.9-4.8 4.4v1.8H6.8V12h2.7v10h4.1V12h3.1l.5-3.8h-3z"></path>
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
               </svg>
             </a>
-            <a href="#" aria-label="YouTube" class="w-10 h-10 rounded-full border border-white/15 bg-white/5 hover:bg-gold-400 hover:text-royal-950 hover:border-gold-400 text-pearl-200 transition grid place-items-center">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M21.6 7.2s-.2-1.5-.9-2.1c-.8-.9-1.7-.9-2.1-1C15.7 3.9 12 3.9 12 3.9h-.1s-3.7 0-6.6.2c-.4.1-1.3.1-2.1 1-.7.6-.9 2.1-.9 2.1S2 9 2 10.8v1.7c0 1.8.2 3.6.2 3.6s.2 1.5.9 2.1c.8.9 1.9.8 2.4.9 1.7.2 6.5.2 6.5.2s3.7 0 6.6-.2c.4-.1 1.3-.1 2.1-1 .7-.6.9-2.1.9-2.1s.2-1.8.2-3.6v-1.7c0-1.7-.2-3.5-.2-3.5zM10 14.3V8.1l5.8 3.1-5.8 3.1z"></path>
-              </svg>
-            </a>
-            <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full border border-white/15 bg-white/5 hover:bg-gold-400 hover:text-royal-950 hover:border-gold-400 text-pearl-200 transition grid place-items-center">
-              <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M6.7 8.9H3.1V21h3.6V8.9zM4.9 3C3.7 3 3 3.8 3 4.8s.7 1.8 1.9 1.8c1.2 0 1.9-.8 1.9-1.8S6.1 3 4.9 3zM21 14.1c0-3.6-1.9-5.5-4.5-5.5-2.1 0-3 1.2-3.5 2V8.9H9.4V21H13v-6.7c0-.4 0-.7.1-1 .3-.7.9-1.4 1.9-1.4 1.4 0 2 1.1 2 2.7V21h3.6l.4-6.9z"></path>
+            <a href="https://www.youtube.com/@auricsaga" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-gold-400 hover:bg-gold-400/15 hover:text-gold-300 text-pearl-300 transition-all duration-300 flex items-center justify-center hover:-translate-y-0.5 shadow-sm">
+              <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
               </svg>
             </a>
           </div>
-          <p class="text-gold-300 font-cinzel tracking-wider text-[11px]">
+          <p class="font-cinzel tracking-wider text-[11px] text-gold-300/90 pt-1">
             &copy; 2026 Auric Saga &middot; Sacred Clarity, Beautifully Delivered.
           </p>
         </div>
@@ -1175,16 +1147,17 @@
             <li><a href="/tarot-reading" class="hover:text-gold-300 transition">Intuitive Tarot</a></li>
             <li><a href="/energy-healing" class="hover:text-gold-300 transition">Energy Restoration</a></li>
           </ul>
+          </ul>
         </div>
 
         <!-- Ecosystem -->
         <div>
           <p class="font-cinzel text-xs font-bold text-white uppercase tracking-wider mb-4">Ecosystem</p>
           <ul class="space-y-2.5">
-            <li><a href="https://aurictools.com" target="_blank" rel="noopener" class="hover:text-gold-300 transition">Auric Tools</a></li>
-            <li><a href="https://auricsaga.shop" target="_blank" rel="noopener" class="hover:text-gold-300 transition">Auric Shop</a></li>
-            <li><a href="https://auricgurukul.com" target="_blank" rel="noopener" class="hover:text-gold-300 transition">Auric Gurukul</a></li>
-            <li><a href="https://blog.auricsaga.com" target="_blank" rel="noopener" class="hover:text-gold-300 transition">Auric Articles</a></li>
+            <li><a href="https://aurictools.com" target="_blank" rel="noopener noreferrer" class="hover:text-gold-300 transition">Auric Tools</a></li>
+            <li><a href="https://auricsaga.shop" target="_blank" rel="noopener noreferrer" class="hover:text-gold-300 transition">Auric Shop</a></li>
+            <li><a href="https://auricgurukul.com" target="_blank" rel="noopener noreferrer" class="hover:text-gold-300 transition">Auric Gurukul</a></li>
+            <li><a href="https://blog.auricsaga.com" target="_blank" rel="noopener noreferrer" class="hover:text-gold-300 transition">Auric Articles</a></li>
           </ul>
         </div>
 
@@ -1192,9 +1165,16 @@
         <div>
           <p class="font-cinzel text-xs font-bold text-white uppercase tracking-wider mb-4">Direct Contact</p>
           <ul class="space-y-2.5">
-            <li class="text-white font-medium">care@auricsaga.com</li>
-            <li>Worldwide Video &amp; Telephonic Consultations</li>
-            <li class="pt-2 text-gold-400 font-cinzel text-[11px]">&#10022; Discretion Guaranteed</li>
+            <li>
+              <a href="mailto:care@auricsaga.com" class="text-white font-medium hover:text-gold-300 transition flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-gold-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                care@auricsaga.com
+              </a>
+            </li>
+            <li class="text-pearl-400">Worldwide Video &amp; Telephonic Consultations</li>
+            <li class="pt-2 text-gold-400 font-cinzel text-[11px] flex items-center gap-1.5">
+              <span>&#10022;</span> Discretion Guaranteed
+            </li>
           </ul>
         </div>
 
@@ -1205,7 +1185,10 @@
         <div class="flex items-center gap-6">
           <a href="/privacy-policy" class="hover:text-white transition">Privacy Policy</a>
           <a href="/terms" class="hover:text-white transition">Consultation Terms</a>
-          <a href="/book-consultation" class="text-gold-300 hover:underline">Reserve Session</a>
+          <a href="/book-consultation" class="text-gold-300 hover:text-gold-200 transition font-semibold flex items-center gap-1">
+            <span>Reserve Session</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
         </div>
       </div>
 

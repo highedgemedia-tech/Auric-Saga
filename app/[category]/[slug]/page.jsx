@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import AuricHeroArt from "@/components/AuricHeroArt";
 import PageEditorialImage from "@/components/PageEditorialImage";
+import PageHeroIllumination from "@/components/PageHeroIllumination";
 import {
   breadcrumbJsonLd,
   getAllSubpages,
@@ -79,7 +79,8 @@ export default function ServiceSubpage({ params }) {
   return (
     <>
       {/* 1. Hero */}
-      <section className="page-hero">
+      <section className={`page-hero page-hero--${category.slug} page-hero--detail`}>
+        <PageHeroIllumination variant={category.slug} scope={page.slug} />
         <div className="container hero-grid">
           <div className="stack-lg reveal">
             <nav className="breadcrumb" aria-label="Breadcrumb">
@@ -101,7 +102,6 @@ export default function ServiceSubpage({ params }) {
             </div>
           </div>
           <aside className="card card-pad stack scroll-reveal artwork-aside">
-            <AuricHeroArt variant={category.slug} seed={page.slug} title={page.title} />
             <span className="eyebrow">Best Suited For</span>
             <div className="check-list">
               {page.suitableFor.map((item) => <p key={item}>{item}</p>)}
@@ -132,7 +132,7 @@ export default function ServiceSubpage({ params }) {
       </section>
 
       {/* 3. Approach */}
-      <section className="section section-soft">
+      <section className="section section-soft method-section">
         <div className="container two-col">
           <div className="stack reveal">
             <span className="eyebrow">Detailed Approach</span>

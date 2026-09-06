@@ -1,6 +1,6 @@
 import Link from "next/link";
-import AuricHeroArt from "@/components/AuricHeroArt";
 import ContactForm from "@/components/ContactForm";
+import PageHeroIllumination from "@/components/PageHeroIllumination";
 import ServiceArtwork, { artworkCategories } from "@/components/ServiceArtwork";
 
 export const metadata = {
@@ -47,10 +47,11 @@ export default function BookConsultationPage() {
 
   return (
     <>
-      <section className="page-hero" id="instant-booking">
+      <section className="page-hero page-hero--booking" id="instant-booking">
+        <PageHeroIllumination variant="booking" scope="private-reservation" />
         <div className="container hero-grid">
           <div className="stack-lg reveal"><span className="eyebrow">Private Reservation</span><h1>Book a consultation prepared around your exact concern.</h1><p className="lead">Choose online or in-person guidance for Vastu, Numerology, Astrology, Tarot Reading, Energy Healing, or a combined Master Auric Audit.</p><div className="pill-list"><span className="pill">Online Sessions</span><span className="pill">In-Person by Availability</span><span className="pill">Confidential Preparation</span></div></div>
-          <aside className="card card-pad stack scroll-reveal artwork-aside"><AuricHeroArt variant="booking" seed="private-consultation-reservation" title="Consultation Journey" /><ContactForm compact /></aside>
+          <aside className="card card-pad stack scroll-reveal artwork-aside"><ContactForm compact /></aside>
         </div>
       </section>
 

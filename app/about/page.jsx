@@ -1,5 +1,5 @@
 import Link from "next/link";
-import AuricHeroArt from "@/components/AuricHeroArt";
+import PageHeroIllumination from "@/components/PageHeroIllumination";
 
 export const metadata = {
   title: "About Us",
@@ -67,7 +67,8 @@ const practiceStats = [
 export default function AboutPage() {
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero page-hero--about">
+        <PageHeroIllumination variant="about" scope="team-philosophy" />
         <div className="container hero-grid">
           <div className="stack-lg reveal">
             <span className="eyebrow">About Auric Saga</span>
@@ -78,7 +79,6 @@ export default function AboutPage() {
             <Link className="btn btn-primary btn-lg" href="/book-consultation">Book Consultation</Link>
           </div>
           <aside className="card card-pad stack scroll-reveal artwork-aside">
-            <AuricHeroArt variant="about" seed="auric-core-team-philosophy" title="Auric Saga" />
             <span className="eyebrow">Philosophy</span>
             <p>
               The work is not about fatalism. It is about reading the pattern clearly, choosing better timing, restoring balance, and making decisions with steadiness.

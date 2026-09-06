@@ -1,6 +1,6 @@
 import Link from "next/link";
-import AuricHeroArt from "@/components/AuricHeroArt";
 import PageEditorialImage from "@/components/PageEditorialImage";
+import PageHeroIllumination from "@/components/PageHeroIllumination";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
@@ -16,7 +16,11 @@ const faqs = [
   { question: "Are messages confidential?", answer: "Consultation inquiries are treated as private client communication and used only to respond, prepare, and coordinate your request." }
 ];
 
-const socialLinks = ["Instagram", "Facebook", "YouTube", "LinkedIn"];
+const socialLinks = [
+  { label: "Instagram", href: "https://www.instagram.com/auricsaga/" },
+  { label: "Facebook", href: "https://www.facebook.com/auricsaga/" },
+  { label: "YouTube", href: "https://www.youtube.com/@auricsaga" }
+];
 
 export default function ContactPage() {
   const contactJsonLd = {
@@ -29,10 +33,11 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero page-hero--contact">
+        <PageHeroIllumination variant="contact" scope="care-desk-worldwide" />
         <div className="container hero-grid">
           <div className="stack-lg reveal"><span className="eyebrow">Contact Auric Saga</span><h1>Share your concern with the care desk.</h1><p className="lead">Send your question, preferred consultation type, location or time zone, and suitable time. The team will respond with the right next step.</p><div className="button-row"><a className="btn btn-primary btn-lg" href="#contact-form">Send an Inquiry</a><a className="btn btn-secondary btn-lg" href="https://wa.me/?text=Hello%20Auric%20Saga%2C%20I%20would%20like%20to%20ask%20about%20a%20private%20consultation." target="_blank" rel="noopener noreferrer">Open WhatsApp</a></div></div>
-          <aside className="card card-pad stack scroll-reveal artwork-aside"><AuricHeroArt variant="contact" seed="care-desk-worldwide" title="Direct Connection" /><span className="eyebrow">Quick Contact</span><div className="check-list"><p>Worldwide video and voice sessions</p><p>Monday-Saturday, 10:00 AM-7:00 PM IST</p><p>Private inquiry handling</p><p>Service matching available</p></div></aside>
+          <aside className="card card-pad stack scroll-reveal artwork-aside"><span className="eyebrow">Quick Contact</span><div className="check-list"><p>Worldwide video and voice sessions</p><p>Monday-Saturday, 10:00 AM-7:00 PM IST</p><p>Private inquiry handling</p><p>Service matching available</p></div></aside>
         </div>
       </section>
 
@@ -57,7 +62,7 @@ export default function ContactPage() {
       </section>
 
       <section className="section section-soft">
-        <div className="container cta-banner scroll-reveal"><div className="stack"><span className="eyebrow">Auric Community</span><h2>Stay connected with the wider Auric ecosystem.</h2><p>Follow consultation insights, learning resources, practical tools, and sacred products across Auric Saga&apos;s community channels.</p><div className="social-text-links">{socialLinks.map((item) => <a href="#" key={item}>{item}</a>)}</div></div><div className="button-row"><a className="btn btn-gold btn-lg" href="https://blog.auricsaga.com" target="_blank" rel="noopener noreferrer">Read Auric Articles</a><a className="btn btn-on-dark btn-lg" href="https://auricgurukul.com" target="_blank" rel="noopener noreferrer">Explore Auric Gurukul</a></div></div>
+        <div className="container cta-banner scroll-reveal"><div className="stack"><span className="eyebrow">Auric Community</span><h2>Stay connected with the wider Auric ecosystem.</h2><p>Follow consultation insights, learning resources, practical tools, and sacred products across Auric Saga&apos;s community channels.</p><div className="social-text-links">{socialLinks.map((item) => <a href={item.href} key={item.label} target="_blank" rel="noopener noreferrer">{item.label}</a>)}</div></div><div className="button-row"><a className="btn btn-gold btn-lg" href="https://blog.auricsaga.com" target="_blank" rel="noopener noreferrer">Read Auric Articles</a><a className="btn btn-on-dark btn-lg" href="https://auricgurukul.com" target="_blank" rel="noopener noreferrer">Explore Auric Gurukul</a></div></div>
       </section>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJsonLd) }} />

@@ -1,20 +1,18 @@
 import Link from "next/link";
-import AuricHeroArt from "@/components/AuricHeroArt";
 import PageEditorialImage from "@/components/PageEditorialImage";
+import PageHeroIllumination from "@/components/PageHeroIllumination";
 
-export default function LegalPage({ title, intro, updated, sections, artwork }) {
+export default function LegalPage({ title, intro, updated, sections, artwork, illumination = "terms" }) {
   return (
     <>
-      <section className="page-hero legal-hero">
-        <div className="container hero-grid">
+      <section className={`page-hero legal-hero page-hero--${illumination}`}>
+        <PageHeroIllumination variant={illumination} scope={title} />
+        <div className="container narrow">
           <div className="stack-lg reveal">
             <span className="eyebrow">Auric Saga Legal</span>
             <h1>{title}</h1>
             <p className="lead">{intro}</p>
             <span className="pill">Last updated: {updated}</span>
-          </div>
-          <div className="scroll-reveal">
-            <AuricHeroArt variant="legal" seed={title} title={title} />
           </div>
         </div>
       </section>
