@@ -2,6 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageEditorialImage from "@/components/PageEditorialImage";
 import PageHeroIllumination from "@/components/PageHeroIllumination";
+import SeoContentSection from "@/components/SeoContentSection";
+import ServiceFlipCard from "@/components/ServiceFlipCard";
 import { getCategoryArtworkSrc } from "@/components/ServiceArtwork";
 import {
   breadcrumbJsonLd,
@@ -60,6 +62,10 @@ export default function CategoryPage({ params }) {
     areaServed: "Worldwide",
     serviceType: category.label
   };
+  const consultationPaths = category.consultationPaths || {
+    title: `Explore focused ${category.label.toLowerCase()} consultation paths.`,
+    description: `Compare the available ${category.label.toLowerCase()} services and choose the consultation that best matches your current question.`
+  };
 
   return (
     <>
@@ -85,36 +91,46 @@ export default function CategoryPage({ params }) {
         </div>
       </section>
 
-      <section className="section">
+      <SeoContentSection category={category} details={details} />
+
+      <section className="section section-soft consultation-paths-section">
         <div className="container stack-lg">
           <div className="narrow stack reveal section-heading">
-            <span className="eyebrow">Common Concerns</span>
-            <h2>Signs that a focused {category.label.toLowerCase()} consultation may help.</h2>
+            <span className="eyebrow">Consultation Paths</span>
+            <h2>{consultationPaths.title}</h2>
+            <p>{consultationPaths.description}</p>
           </div>
-          <div className="feature-grid">
-            {details.painPoints.map((item, index) => (
-              <article className="card card-pad stack scroll-reveal" key={item.title}>
-                <span className="number-badge">{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.copy}</p>
-              </article>
+          <div className="service-grid service-flip-grid">
+            {category.subpages.map((page) => (
+              <ServiceFlipCard
+                key={page.slug}
+                href={`/${category.slug}/${page.slug}`}
+                title={page.title}
+                description={page.description}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section section-soft">
-        <div className="container stack-lg">
-          <div className="narrow stack reveal section-heading">
-            <span className="eyebrow">Consultation Paths</span>
-            <h2>Choose the guidance that matches your exact question.</h2>
-            <p>Each focused page includes preparation requirements, benefits, the consultation sequence, reviews, remedies, and FAQs.</p>
+      <section className="section concerns-section">
+        <div className="container concern-layout">
+          <div className="stack reveal concern-intro">
+            <span className="eyebrow">Common Concerns</span>
+            <h2>Signs that a focused {category.label.toLowerCase()} consultation may help.</h2>
+            <p>These are common situations clients bring into the first conversation. They are here to help you recognize the pattern, not to function as separate services.</p>
           </div>
-          <div className="service-grid">
-            {category.subpages.map((page) => (
-              <Link className="card card-pad scroll-reveal stack" key={page.slug} href={`/${category.slug}/${page.slug}`}>
-                <span className="feature-mark" aria-hidden="true">+</span><h3>{page.title}</h3><p>{page.description}</p><span className="text-link">Explore consultation</span>
-              </Link>
+          <ul className="concern-list" aria-label={`${category.label} common concerns`}>
+            {details.painPoints.map((item, index) => (
+              <li className="concern-item scroll-reveal" key={item.title}>
+                <span className="concern-index">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.copy}</p>
+                </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 

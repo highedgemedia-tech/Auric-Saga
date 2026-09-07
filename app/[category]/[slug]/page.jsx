@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageEditorialImage from "@/components/PageEditorialImage";
 import PageHeroIllumination from "@/components/PageHeroIllumination";
+import SeoContentSection from "@/components/SeoContentSection";
 import {
   breadcrumbJsonLd,
   getAllSubpages,
@@ -110,6 +111,8 @@ export default function ServiceSubpage({ params }) {
           </aside>
         </div>
       </section>
+
+      <SeoContentSection category={category} page={page} />
 
       {/* 2. Problems */}
       <section className="section">

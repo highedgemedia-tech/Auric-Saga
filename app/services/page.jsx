@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageHeroIllumination from "@/components/PageHeroIllumination";
-import ServiceArtwork from "@/components/ServiceArtwork";
+import ServiceFlipCard from "@/components/ServiceFlipCard";
 import { clientReviews, getAllCategories } from "@/lib/servicesData";
 
 export const metadata = {
@@ -48,9 +48,15 @@ export default function ServicesPage() {
       <section className="section">
         <div className="container stack-lg">
           <div className="narrow stack reveal section-heading"><span className="eyebrow">Five Core Disciplines</span><h2>Explore every Auric Saga consultation category.</h2></div>
-          <div className="service-grid services-category-grid">
+          <div className="service-grid services-category-grid service-flip-grid">
             {categories.map((category) => (
-              <Link className="card card-pad stack scroll-reveal service-visual-card" href={`/${category.slug}`} key={category.slug}><ServiceArtwork category={category.slug} compact showCaption={false} /><span className="eyebrow">{category.eyebrow}</span><h2>{category.label}</h2><p>{category.description}</p><span className="text-link">{serviceActionLabels[category.slug]}</span></Link>
+              <ServiceFlipCard
+                key={category.slug}
+                href={`/${category.slug}`}
+                title={category.label}
+                description={category.description}
+                actionLabel={serviceActionLabels[category.slug]}
+              />
             ))}
           </div>
         </div>
@@ -59,8 +65,16 @@ export default function ServicesPage() {
       <section className="section section-soft">
         <div className="container stack-lg">
           <div className="narrow stack reveal section-heading"><span className="eyebrow">Find Your Starting Point</span><h2>Begin with the issue you can describe most clearly.</h2><p>You do not need to know the correct modality before contacting the care desk.</p></div>
-          <div className="service-grid">
-            {concernPaths.map((item) => <Link className="card card-pad stack scroll-reveal" href={item.href} key={item.title}><span className="feature-mark" aria-hidden="true">+</span><h3>{item.title}</h3><p>{item.copy}</p><span className="text-link">Explore this path</span></Link>)}
+          <div className="service-grid service-flip-grid">
+            {concernPaths.map((item) => (
+              <ServiceFlipCard
+                key={item.title}
+                href={item.href}
+                title={item.title}
+                description={item.copy}
+                actionLabel="Explore this path"
+              />
+            ))}
           </div>
         </div>
       </section>
