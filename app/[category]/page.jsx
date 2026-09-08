@@ -18,8 +18,9 @@ export function generateStaticParams() {
   return getAllCategories().map((category) => ({ category: category.slug }));
 }
 
-export function generateMetadata({ params }) {
-  const category = getCategory(params.category);
+export async function generateMetadata({ params }) {
+  const { category: categorySlug } = await params;
+  const category = getCategory(categorySlug);
   if (!category) return {};
   return {
     title: category.metaTitle,
@@ -34,9 +35,10 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function CategoryPage({ params }) {
-  const category = getCategory(params.category);
-  const details = getCategoryDetails(params.category);
+export default async function CategoryPage({ params }) {
+  const { category: categorySlug } = await params;
+  const category = getCategory(categorySlug);
+  const details = getCategoryDetails(categorySlug);
   if (!category || !details) notFound();
 
   const editorialDetails = category.process.slice(0, 3).map((step, index) => ({

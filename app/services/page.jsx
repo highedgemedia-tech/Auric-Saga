@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageHeroIllumination from "@/components/PageHeroIllumination";
 import ServiceFlipCard from "@/components/ServiceFlipCard";
+import { getCategoryArtworkSrc } from "@/components/ServiceArtwork";
 import { clientReviews, getAllCategories } from "@/lib/servicesData";
 
 export const metadata = {
@@ -48,15 +49,21 @@ export default function ServicesPage() {
       <section className="section">
         <div className="container stack-lg">
           <div className="narrow stack reveal section-heading"><span className="eyebrow">Five Core Disciplines</span><h2>Explore every Auric Saga consultation category.</h2></div>
-          <div className="service-grid services-category-grid service-flip-grid">
+          <div className="services-image-grid">
             {categories.map((category) => (
-              <ServiceFlipCard
+              <Link
+                className="services-image-card scroll-reveal"
                 key={category.slug}
                 href={`/${category.slug}`}
-                title={category.label}
-                description={category.description}
-                actionLabel={serviceActionLabels[category.slug]}
-              />
+              >
+                <span className="services-image-card__media">
+                  <img src={getCategoryArtworkSrc(category.slug)} alt={`${category.label} consultation artwork`} />
+                </span>
+                <span className="services-image-card__eyebrow">{category.eyebrow}</span>
+                <span className="services-image-card__title">{category.label}</span>
+                <span className="services-image-card__copy">{category.description}</span>
+                <span className="text-link">{serviceActionLabels[category.slug]}</span>
+              </Link>
             ))}
           </div>
         </div>

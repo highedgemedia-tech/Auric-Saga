@@ -257,7 +257,7 @@
   </header>
 
   <!-- LIGHT HERO SECTION -->
-  <section class="relative min-h-[88vh] flex items-center justify-center overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-pearl-100 via-pearl-200/50 to-pearl-100">
+  <section class="home-hero relative min-h-[88vh] flex items-center justify-center overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-pearl-100 via-pearl-200/50 to-pearl-100">
     <canvas id="celestialCanvas"></canvas>
     
     <!-- Radiant Mists -->
@@ -265,8 +265,10 @@
     <div class="absolute top-1/2 -right-32 w-[500px] h-[500px] bg-gold-400/15 rounded-full blur-[130px] pointer-events-none"></div>
     
     <!-- Rotating Delicate Sacred Geometry Rings -->
-    <div class="absolute w-[800px] h-[800px] rounded-full border border-gold-500/15 animate-spin-slow pointer-events-none hidden lg:block"></div>
-    <div class="absolute w-[600px] h-[600px] rounded-full border border-dashed border-royal-700/15 animate-spin-reverse pointer-events-none hidden lg:block"></div>
+    <div class="home-hero__ring home-hero__ring--outer absolute w-[800px] h-[800px] rounded-full border border-gold-500/15 animate-spin-slow pointer-events-none hidden lg:block"></div>
+    <div class="home-hero__ring home-hero__ring--inner absolute w-[600px] h-[600px] rounded-full border border-dashed border-royal-700/15 animate-spin-reverse pointer-events-none hidden lg:block"></div>
+    <div class="home-hero__trace home-hero__trace--one pointer-events-none hidden lg:block"></div>
+    <div class="home-hero__trace home-hero__trace--two pointer-events-none hidden lg:block"></div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       
@@ -346,27 +348,27 @@
           </a>
         </div>
 
-        <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <div class="p-6 rounded-2xl bg-pearl-100 border border-pearl-300 shadow-sm">
-            <div class="w-11 h-11 rounded-xl bg-royal-900 text-gold-300 grid place-items-center mb-5 font-cinzel font-bold">01</div>
+        <div class="home-highlights-list lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="home-highlight-item p-6 rounded-2xl bg-pearl-100 border border-pearl-300 shadow-sm">
+            <div class="home-highlight-index w-11 h-11 rounded-xl bg-royal-900 text-gold-300 grid place-items-center mb-5 font-cinzel font-bold">01</div>
             <h3 class="font-cinzel text-lg font-bold text-royal-950">Authentic Vedic Method</h3>
             <p class="text-sm text-ink-700 mt-3 leading-relaxed">Every consultation is rooted in Vastu, Jyotish, Numerology, Tarot, and energy principles practiced with discipline and care.</p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-pearl-100 border border-pearl-300 shadow-sm">
-            <div class="w-11 h-11 rounded-xl bg-gold-100 text-gold-700 grid place-items-center mb-5 font-cinzel font-bold">02</div>
+          <div class="home-highlight-item p-6 rounded-2xl bg-pearl-100 border border-pearl-300 shadow-sm">
+            <div class="home-highlight-index w-11 h-11 rounded-xl bg-gold-100 text-gold-700 grid place-items-center mb-5 font-cinzel font-bold">02</div>
             <h3 class="font-cinzel text-lg font-bold text-royal-950">Practical Remedies</h3>
             <p class="text-sm text-ink-700 mt-3 leading-relaxed">Receive realistic guidance that can be applied without fear, pressure, or unnecessary demolition in your space.</p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-pearl-100 border border-pearl-300 shadow-sm">
-            <div class="w-11 h-11 rounded-xl bg-royal-100 text-royal-800 grid place-items-center mb-5 font-cinzel font-bold">03</div>
+          <div class="home-highlight-item p-6 rounded-2xl bg-pearl-100 border border-pearl-300 shadow-sm">
+            <div class="home-highlight-index w-11 h-11 rounded-xl bg-royal-100 text-royal-800 grid place-items-center mb-5 font-cinzel font-bold">03</div>
             <h3 class="font-cinzel text-lg font-bold text-royal-950">Private Preparation</h3>
             <p class="text-sm text-ink-700 mt-3 leading-relaxed">Your charts, concerns, and floor plans are reviewed before the session so the conversation remains focused and useful.</p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-pearl-100 border border-pearl-300 shadow-sm">
-            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-700 grid place-items-center mb-5 font-cinzel font-bold">04</div>
+          <div class="home-highlight-item p-6 rounded-2xl bg-pearl-100 border border-pearl-300 shadow-sm">
+            <div class="home-highlight-index w-11 h-11 rounded-xl bg-emerald-100 text-emerald-700 grid place-items-center mb-5 font-cinzel font-bold">04</div>
             <h3 class="font-cinzel text-lg font-bold text-royal-950">Holistic View</h3>
             <p class="text-sm text-ink-700 mt-3 leading-relaxed">When needed, multiple disciplines are connected into one coherent roadmap for career, home, relationships, and wellbeing.</p>
           </div>

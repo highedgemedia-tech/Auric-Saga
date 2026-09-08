@@ -18,9 +18,10 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }) {
-  const category = getCategory(params.category);
-  const page = getSubpage(params.category, params.slug);
+export async function generateMetadata({ params }) {
+  const { category: categorySlug, slug } = await params;
+  const category = getCategory(categorySlug);
+  const page = getSubpage(categorySlug, slug);
   if (!category || !page) return {};
 
   return {
@@ -36,9 +37,10 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function ServiceSubpage({ params }) {
-  const category = getCategory(params.category);
-  const page = getSubpage(params.category, params.slug);
+export default async function ServiceSubpage({ params }) {
+  const { category: categorySlug, slug } = await params;
+  const category = getCategory(categorySlug);
+  const page = getSubpage(categorySlug, slug);
   if (!category || !page) notFound();
 
   const editorialDetails = page.benefits.slice(0, 3).map((benefit, index) => ({
