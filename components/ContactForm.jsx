@@ -10,12 +10,13 @@ export default function ContactForm({ compact = false }) {
     const form = new FormData(event.currentTarget);
     const name = form.get("name")?.toString().trim();
     const email = form.get("email")?.toString().trim();
+    const phone = form.get("phone")?.toString().trim();
     const subject = form.get("subject")?.toString().trim();
     const message = form.get("message")?.toString().trim();
 
     const mailSubject = encodeURIComponent(subject || "Auric Saga Consultation Inquiry");
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`
+      `Name: ${name}\nEmail: ${email}\nWhatsApp / Phone: ${phone || "Not shared"}\nSubject: ${subject}\n\nMessage:\n${message}`
     );
 
     setStatus("Opening your email app with the message prepared.");
@@ -33,6 +34,10 @@ export default function ContactForm({ compact = false }) {
           <label htmlFor={compact ? "compact-email" : "email"}>Email</label>
           <input id={compact ? "compact-email" : "email"} type="email" name="email" required placeholder="you@example.com" />
         </div>
+      </div>
+      <div className="field">
+        <label htmlFor={compact ? "compact-phone" : "phone"}>WhatsApp / Phone</label>
+        <input id={compact ? "compact-phone" : "phone"} name="phone" placeholder="Include country code if available" />
       </div>
       <div className="field">
         <label htmlFor={compact ? "compact-subject" : "subject"}>Subject</label>

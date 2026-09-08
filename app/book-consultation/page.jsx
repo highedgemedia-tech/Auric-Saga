@@ -50,7 +50,7 @@ export default function BookConsultationPage() {
       <section className="page-hero page-hero--booking" id="instant-booking">
         <PageHeroIllumination variant="booking" scope="private-reservation" />
         <div className="container hero-grid">
-          <div className="stack-lg reveal"><span className="eyebrow">Private Reservation</span><h1>Book a consultation prepared around your exact concern.</h1><p className="lead">Choose online or in-person guidance for Vastu, Numerology, Astrology, Tarot Reading, Energy Healing, or a combined Master Auric Audit.</p><div className="pill-list"><span className="pill">Online Sessions</span><span className="pill">In-Person by Availability</span><span className="pill">Confidential Preparation</span></div></div>
+          <div className="stack-lg reveal"><span className="eyebrow">Book a Consultation</span><h1>Book a consultation prepared around your exact concern.</h1><p className="lead">Choose online or in-person guidance for Vastu, Numerology, Astrology, Tarot Reading, Energy Healing, or a combined Master Auric Audit.</p><div className="pill-list"><span className="pill">Online Sessions</span><span className="pill">In-Person by Availability</span><span className="pill">Confidential Preparation</span></div></div>
           <aside className="card card-pad stack scroll-reveal artwork-aside"><ContactForm compact /></aside>
         </div>
       </section>
@@ -60,7 +60,7 @@ export default function BookConsultationPage() {
       </section>
 
       <section className="section section-soft">
-        <div className="container stack-lg"><div className="narrow stack reveal section-heading"><span className="eyebrow">Booking Process</span><h2>Four clear steps from request to guidance.</h2></div><div className="process-grid">{process.map((step, index) => <article className="process-step scroll-reveal" key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.copy}</p></article>)}</div></div>
+        <div className="container stack-lg"><div className="narrow stack reveal section-heading"><span className="eyebrow">Consultation Process</span><h2>Four clear steps from request to guidance.</h2></div><div className="process-grid">{process.map((step, index) => <article className="process-step scroll-reveal" key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.copy}</p></article>)}</div></div>
       </section>
 
       <section className="section">
@@ -72,7 +72,7 @@ export default function BookConsultationPage() {
       </section>
 
       <section className="section">
-        <div className="narrow stack-lg"><div className="stack reveal section-heading"><span className="eyebrow">Booking FAQs</span><h2>Important details before you reserve.</h2></div><div className="faq-list">{faqs.map((faq) => <details className="card card-pad scroll-reveal" key={faq.question}><summary><h3>{faq.question}</h3><span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</div></div>
+        <div className="narrow stack-lg"><div className="stack reveal section-heading"><span className="eyebrow">Consultation FAQs</span><h2>Important details before you reserve.</h2></div><div className="faq-list">{faqs.map((faq) => <details className="card card-pad scroll-reveal" key={faq.question}><summary><h3>{faq.question}</h3><span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</div></div>
       </section>
 
       <section className="section section-soft">

@@ -64,6 +64,28 @@ const practiceStats = [
   { value: "100%", label: "Private and tailored" }
 ];
 
+const practitionerNotes = [
+  {
+    title: "Multi-disciplinary Review",
+    copy: "The practitioner-led method draws from Vastu, Jyotish, Numerology, Tarot, and subtle energy work so the answer is not limited to one lens."
+  },
+  {
+    title: "Grounded Interpretation",
+    copy: "Sessions focus on what can be understood, timed, balanced, or changed with practical remedies and steady decision-making."
+  },
+  {
+    title: "Private Client Care",
+    copy: "Birth details, floor plans, family concerns, relationship matters, and business questions are handled through a confidential care process."
+  }
+];
+
+const consultationFlow = [
+  { title: "Share the Concern", copy: "Begin with your central question, preferred service if known, and any deadline or event date." },
+  { title: "Confirm the Scope", copy: "The care desk recommends the right consultation type, format, preparation, and fee before booking." },
+  { title: "Practitioner Preparation", copy: "Charts, names, plans, questions, or energetic context are reviewed before the private session." },
+  { title: "Receive Action Guidance", copy: "The consultation closes with priorities, remedies, timing notes, or next steps you can act on." }
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -107,8 +129,29 @@ export default function AboutPage() {
 
       <section className="section section-soft">
         <div className="container stack-lg">
+          <div className="narrow stack reveal section-heading">
+            <span className="eyebrow">About the Practitioner</span>
+            <h2>Prepared guidance, not one-size-fits-all advice.</h2>
+            <p>
+              Auric Saga&apos;s consultation practice is shaped around careful listening, traditional study, intuitive interpretation, and practical remedies that respect the client&apos;s real circumstances.
+            </p>
+          </div>
+          <div className="service-grid">
+            {practitionerNotes.map((item) => (
+              <article className="card card-pad stack scroll-reveal" key={item.title}>
+                <span className="feature-mark" aria-hidden="true">+</span>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container stack-lg">
           <div className="narrow stack reveal">
-            <span className="eyebrow">Core Values</span>
+            <span className="eyebrow">Our Philosophy / Approach</span>
             <h2>The principles behind every session.</h2>
           </div>
           <div className="feature-grid">
@@ -143,7 +186,7 @@ export default function AboutPage() {
       <section className="section section-soft">
         <div className="container stack-lg">
           <div className="narrow stack reveal">
-            <span className="eyebrow">Credentials, Team and Recognition</span>
+            <span className="eyebrow">Certifications / Credentials</span>
             <h2>Prepared by a dedicated multi-disciplinary team.</h2>
             <p>Each consultation is matched to relevant practice experience. Modality-specific background and preparation requirements are confirmed by the care desk before booking.</p>
           </div>
@@ -191,7 +234,7 @@ export default function AboutPage() {
       <section className="section">
         <div className="container stack-lg">
           <div className="narrow stack reveal">
-            <span className="eyebrow">Client Transformations</span>
+            <span className="eyebrow">Testimonials</span>
             <h2>Clarity clients could carry into daily life.</h2>
           </div>
           <div className="service-grid">
@@ -200,6 +243,25 @@ export default function AboutPage() {
                 <blockquote>{testimonial.quote}</blockquote>
                 <figcaption>{testimonial.name}</figcaption>
               </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-soft">
+        <div className="container stack-lg">
+          <div className="narrow stack reveal section-heading">
+            <span className="eyebrow">How Consultations Work</span>
+            <h2>A clear path from inquiry to guidance.</h2>
+            <p>Each booking is scoped before payment so the session format, preparation, and expected outcome are clear.</p>
+          </div>
+          <div className="process-grid">
+            {consultationFlow.map((step, index) => (
+              <article className="process-step scroll-reveal" key={step.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{step.title}</h3>
+                <p>{step.copy}</p>
+              </article>
             ))}
           </div>
         </div>
