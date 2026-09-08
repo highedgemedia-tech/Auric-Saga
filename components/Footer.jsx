@@ -52,9 +52,6 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            <p className="font-cinzel tracking-wider text-[11px] text-gold-300/90 pt-1">
-              &copy; 2026 Auric Saga &middot; Sacred Clarity, Beautifully Delivered.
-            </p>
           </div>
 
           {/* Consultations Column */}
@@ -115,7 +112,7 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-white transition">Consultation Terms</Link>
             <span aria-hidden="true" className="text-pearl-500">|</span>
             <Link href="/book-consultation" className="text-gold-300 hover:text-gold-200 transition font-semibold flex items-center gap-1">
-              <span>Reserve Session</span>
+              <span>Reserve Session&nbsp;</span>
               <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>

@@ -156,6 +156,10 @@ body {
   font-size: 1rem !important;
 }
 
+.home-page footer p {
+  font-size: inherit !important;
+}
+
 .gold-gradient-text {
   background: linear-gradient(135deg, var(--gold-700) 0%, var(--gold-500) 40%, var(--gold-400) 70%, #906b12 100%);
   -webkit-background-clip: text;
