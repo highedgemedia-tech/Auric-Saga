@@ -103,7 +103,8 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-pearl-400">
-          <p>Crafted with sacred reverence for the modern seeker.</p>
+          <p>&copy; 2026 Auric Saga &middot; Sacred Clarity, Beautifully Delivered.</p>
+          <p>Made with <span className="text-red-500" aria-label="love">&hearts;</span> High Edge Media</p>
           <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-end">
             <Link href="/about" className="hover:text-white transition">About</Link>
             <span aria-hidden="true" className="text-pearl-500">|</span>
