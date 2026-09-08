@@ -104,10 +104,19 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-pearl-400">
           <p>Crafted with sacred reverence for the modern seeker.</p>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-end">
             <Link href="/about" className="hover:text-white transition">About</Link>
             <span aria-hidden="true" className="text-pearl-500">|</span>
             <Link href="/contact" className="hover:text-white transition">Contact Us</Link>
+            <span aria-hidden="true" className="text-pearl-500">|</span>
+            <Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link>
+            <span aria-hidden="true" className="text-pearl-500">|</span>
+            <Link href="/terms" className="hover:text-white transition">Consultation Terms</Link>
+            <span aria-hidden="true" className="text-pearl-500">|</span>
+            <Link href="/book-consultation" className="text-gold-300 hover:text-gold-200 transition font-semibold flex items-center gap-1">
+              <span>Reserve Session</span>
+              <span aria-hidden="true">&rarr;</span>
+            </Link>
           </div>
         </div>
 
